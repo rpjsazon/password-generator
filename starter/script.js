@@ -61,12 +61,16 @@ function getRandom(arr) {
     return;
   }
 
+  // I created a empty var "charset" to add characters in it depending on how many passLength input.
   var charSet = "";
   if (lowercase) charSet += lowerCasedCharacters;
   if (uppercase) charSet += upperCasedCharacters;
   if (numeric) charSet += numericCharacters;
   if (special) charSet += specialCharacters;
 
+  // Reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/floor
+  // Reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+  // Reference: https://dev.to/code_mystery/random-password-generator-using-javascript-6a
   for (let i = 0; i < passLength; i++) {
     getPassword += charSet[Math.floor(Math.random() * charSet.length)];
   }
