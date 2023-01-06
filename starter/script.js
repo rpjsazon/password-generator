@@ -26,81 +26,57 @@ var specialCharacters = [
 ];
 
 // Array of numeric characters to be included in password
-var numericCharacters = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+// I changed to this format because it seemed that if I put it on array, my code is detecting the ",".
+var numericCharacters = "0123456789";
 
 // Array of lowercase characters to be included in password
-var lowerCasedCharacters = [
-  'a',
-  'b',
-  'c',
-  'd',
-  'e',
-  'f',
-  'g',
-  'h',
-  'i',
-  'j',
-  'k',
-  'l',
-  'm',
-  'n',
-  'o',
-  'p',
-  'q',
-  'r',
-  's',
-  't',
-  'u',
-  'v',
-  'w',
-  'x',
-  'y',
-  'z'
-];
+var lowerCasedCharacters = "abcdefghijklmnopqrstuvwxyz";
 
 // Array of uppercase characters to be included in password
-var upperCasedCharacters = [
-  'A',
-  'B',
-  'C',
-  'D',
-  'E',
-  'F',
-  'G',
-  'H',
-  'I',
-  'J',
-  'K',
-  'L',
-  'M',
-  'N',
-  'O',
-  'P',
-  'Q',
-  'R',
-  'S',
-  'T',
-  'U',
-  'V',
-  'W',
-  'X',
-  'Y',
-  'Z'
-];
+
+// I changed to this format because it seemed that if I put it on array, my code is detecting the ",".
+var upperCasedCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+var getPassword = "";
 
 // Function to prompt user for password options
 function getPasswordOptions() {
 
 }
 
-// Function for getting a random element from an array
 function getRandom(arr) {
 
+  var passLength = prompt("Enter the desired length of the password (at least 10 characters and no more than 64):");
+  if (passLength < 10 || passLength > 64) {
+    alert("Password length must be at least 10 characters and no more than 64.");
+    return;
+  }
+
+  var lowercase = confirm("Include lowercase characters?");
+  var uppercase = confirm("Include uppercase characters?");
+  var numeric = confirm("Include numeric characters?");
+  var special = confirm("Include special characters ($@%&*, etc)?");
+  if (!lowercase && !uppercase && !numeric && !special) {
+    alert("You must select at least one character type.");
+    return;
+  }
+
+  var charSet = "";
+  if (lowercase) charSet += lowerCasedCharacters;
+  if (uppercase) charSet += upperCasedCharacters;
+  if (numeric) charSet += numericCharacters;
+  if (special) charSet += specialCharacters;
+
+  for (let i = 0; i < passLength; i++) {
+    getPassword += charSet[Math.floor(Math.random() * charSet.length)];
+  }
 }
+
 
 // Function to generate password with user input
 function generatePassword() {
-
+  getRandom()
+    return getPassword;
 }
 
 // Get references to the #generate element
