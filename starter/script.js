@@ -38,6 +38,7 @@ var lowerCasedCharacters = "abcdefghijklmnopqrstuvwxyz";
 var upperCasedCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
 var getPassword = "";
+var charSet = "";
 
 // Function to prompt user for password options
 function getPasswordOptions() {
@@ -62,11 +63,15 @@ function getRandom(arr) {
   }
 
   // I created a empty var "charset" to add characters in it depending on how many passLength input.
-  var charSet = "";
-  if (lowercase) charSet += lowerCasedCharacters;
-  if (uppercase) charSet += upperCasedCharacters;
-  if (numeric) charSet += numericCharacters;
-  if (special) charSet += specialCharacters;
+  
+  if (lowercase) 
+    charSet += lowerCasedCharacters;
+  if (uppercase) 
+    charSet += upperCasedCharacters;
+  if (numeric) 
+    charSet += numericCharacters;
+  if (special) 
+    charSet += specialCharacters;
 
   // Reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/floor
   // Reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
@@ -75,7 +80,6 @@ function getRandom(arr) {
     getPassword += charSet[Math.floor(Math.random() * charSet.length)];
   }
 }
-
 
 // Function to generate password with user input
 function generatePassword() {
