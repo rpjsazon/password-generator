@@ -1,48 +1,43 @@
 // Array of special characters to be included in password
-var specialCharacters = [
-  '@',
-  '%',
-  '+',
-  '\\',
-  '/',
-  "'",
-  '!',
-  '#',
-  '$',
-  '^',
-  '?',
-  ':',
-  ',',
-  ')',
-  '(',
-  '}',
-  '{',
-  ']',
-  '[',
-  '~',
-  '-',
-  '_',
-  '.'
-];
+var specialCharacters = "@%+\/'!#$^?:,)(}{][~-_.";
+  // '@',
+  // '%',
+  // '+',
+  // '\\',
+  // '/',
+  // "'",
+  // '!',
+  // '#',
+  // '$',
+  // '^',
+  // '?',
+  // ':',
+  // ',',
+  // ')',
+  // '(',
+  // '}',
+  // '{',
+  // ']',
+  // '[',
+  // '~',
+  // '-',
+  // '_',
+  // '.'
 
-// Array of numeric characters to be included in password
 // I changed to this format because it seemed that if I put it on array, my code is detecting the ",".
+// Array of numeric characters to be included in password
 var numericCharacters = "0123456789";
-
 // Array of lowercase characters to be included in password
 var lowerCasedCharacters = "abcdefghijklmnopqrstuvwxyz";
-
 // Array of uppercase characters to be included in password
-
-// I changed to this format because it seemed that if I put it on array, my code is detecting the ",".
 var upperCasedCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
+// For loop: getPassword = charSet + random characters * length 
 var getPassword = "";
 var charSet = "";
 
 // Function to prompt user for password options
 function getPasswordOptions() {
-
 }
 
 function getRandom(arr) {
@@ -63,7 +58,6 @@ function getRandom(arr) {
   }
 
   // I created a empty var "charset" to add characters in it depending on how many passLength input.
-  
   if (lowercase) 
     charSet += lowerCasedCharacters;
   if (uppercase) 
