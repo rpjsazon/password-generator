@@ -40,14 +40,18 @@ var charSet = "";
 function getPasswordOptions() {
 }
 
-function getRandom(arr) {
+function getRandom() {
 
-  var passLength = prompt("Enter the desired length of the password (at least 10 characters and no more than 64):");
+  // Create prompt that will return an alert if password is less than 10 and more than 64.
+  // Ask how many password the user wants. 
+  var passLength = prompt("Enter the desired length of the password at least 10 characters and no more than 64:");
   if (passLength < 10 || passLength > 64) {
     alert("Password length must be at least 10 characters and no more than 64.");
     return;
   }
 
+  // Create confirm if the user wants to add character types to password
+  // and return error if none selected.
   var lowercase = confirm("Include lowercase?");
   var uppercase = confirm("Include uppercase?");
   var numeric = confirm("Include numbers?");
@@ -77,6 +81,8 @@ function getRandom(arr) {
 
 // Function to generate password with user input
 function generatePassword() {
+  // Run getRandom and function
+  // Return generated getPassword variable.
   getRandom();
     return getPassword;
 }
