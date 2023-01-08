@@ -48,9 +48,9 @@ function getRandom(arr) {
     return;
   }
 
-  var lowercase = confirm("Include lowercase characters?");
-  var uppercase = confirm("Include uppercase characters?");
-  var numeric = confirm("Include numeric characters?");
+  var lowercase = confirm("Include lowercase?");
+  var uppercase = confirm("Include uppercase?");
+  var numeric = confirm("Include numbers?");
   var special = confirm("Include special characters ($@%&*, etc)?");
   if (!lowercase && !uppercase && !numeric && !special) {
     alert("You must select at least one character type.");
@@ -77,7 +77,7 @@ function getRandom(arr) {
 
 // Function to generate password with user input
 function generatePassword() {
-  getRandom()
+  getRandom();
     return getPassword;
 }
 
